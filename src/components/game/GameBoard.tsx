@@ -2,9 +2,9 @@
 
 import { FC } from "react";
 import { Puyo } from "./Puyo";
-import { useGameStore, PuyoType, Rotation } from "@/store/gameStore";
+import { useGameStore, PuyoType } from "@/store/gameStore";
 
-interface GameBoardProps {}
+type GameBoardProps = Record<string, never>;
 
 export const GameBoard: FC<GameBoardProps> = () => {
   const board = useGameStore((state) => state.board);
@@ -49,7 +49,7 @@ export const GameBoard: FC<GameBoardProps> = () => {
   const activePuyoPositions = getActivePuyoPositions();
 
   // セルが消去中かどうかをチェック
-  const isCellClearing = (x: number, y: number): boolean => {
+  const isCellClearing = (): boolean => {
     return gameStatus === "clearing";
   };
 
@@ -84,9 +84,7 @@ export const GameBoard: FC<GameBoardProps> = () => {
             >
               <Puyo
                 type={puyoType}
-                isClearing={
-                  !isActive && puyoType !== null && isCellClearing(x, y)
-                }
+                isClearing={!isActive && puyoType !== null && isCellClearing()}
                 className={isActive ? "border-white" : ""}
               />
             </div>

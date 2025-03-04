@@ -8,7 +8,7 @@ import { ControlsPanel } from "./ControlsPanel";
 import { ChainText } from "./ChainText";
 import { useGameStore } from "@/store/gameStore";
 
-interface PuyoGameProps {}
+type PuyoGameProps = Record<string, never>;
 
 export const PuyoGame: FC<PuyoGameProps> = () => {
   const startGame = useGameStore((state) => state.startGame);

@@ -4,7 +4,7 @@ import { FC } from "react";
 import { Puyo } from "./Puyo";
 import { useGameStore } from "@/store/gameStore";
 
-interface NextPuyoProps {}
+type NextPuyoProps = Record<string, never>;
 
 export const NextPuyo: FC<NextPuyoProps> = () => {
   const nextPuyo = useGameStore((state) => state.nextPuyo);

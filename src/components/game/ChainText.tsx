@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { useGameStore } from "@/store/gameStore";
 
-interface ChainTextProps {}
+type ChainTextProps = Record<string, never>;
 
 export const ChainText: FC<ChainTextProps> = () => {
   const showChainText = useGameStore((state) => state.showChainText);

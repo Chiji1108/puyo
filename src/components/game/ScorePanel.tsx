@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { useGameStore } from "@/store/gameStore";
 
-interface ScorePanelProps {}
+type ScorePanelProps = Record<string, never>;
 
 export const ScorePanel: FC<ScorePanelProps> = () => {
   const score = useGameStore((state) => state.score);

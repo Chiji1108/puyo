@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 
-interface ControlsPanelProps {}
+type ControlsPanelProps = Record<string, never>;
 
 export const ControlsPanel: FC<ControlsPanelProps> = () => {
   return (
