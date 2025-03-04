@@ -63,6 +63,25 @@
       height: 0;
     }
   }
+
+  @keyframes pop-in-out {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    25% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    75% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
 }
 
 :root {
@@ -143,4 +162,13 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ゲームボードのサイズを適切に設定 */
+.h-144 {
+  height: 36rem; /* 12 cells * 3rem */
+}
+
+.grid-rows-12 {
+  grid-template-rows: repeat(12, minmax(0, 1fr));
 }
